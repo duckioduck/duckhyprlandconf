@@ -1,0 +1,44 @@
+\ {
+  font-family: "Comic Neue", "Noto Sans", sans-serif;
+  font-size: 13px;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  color: #222222;
+  margin: 10px;
+  padding: 10px;
+}
+
+#waybar {
+  background-color: rgba(243, 230, 101, 0.85); /* duck yellow with transparency */
+  border-radius: 50px;
+  margin: 6000px;
+  padding: 4px 10px;
+  border: 2px solid #facc15;
+  box-shadow: 0px 2px 10px rgba(0,0,0,0.3);
+}
+
+#workspaces,
+#clock,
+#battery,
+#network,
+#pulseaudio,
+#tray {
+  background: transparent;
+  padding: 4px 8px;
+  margin: 0 4px;
+  border-radius: 8px;
+}
+
+#workspaces button {
+  padding: 4px 6px;
+  border-radius: 6px;
+  margin: 0 2px;
+  background-color: #fde68a;
+  color: black;
+}
+
+#workspaces button.active {
+  background-color: #facc15;
+  color: black;
+}

@@ -1,0 +1,26 @@
+{
+"layer": "top",
+
+"position": "top",
+
+"modules-left": ["custom/appmenu", "wlr/taskbar"],
+"modules-center": ["hyprland/workspaces", "clock"],
+"modules-right": ["cpu", "user", "network"],
+
+"custom/appmenu": {
+        	"format": "Applications {icon}",
+        	"format-icon": "󰻀",
+        	"rotate": 0,
+        	"exec": "echo 'test'",
+        	"on-click": "~/.config/waybar/runwofi.sh"
+    	},
+
+"wlr/taskbar": {
+	"format": "{icon}",
+	"tooltip": true,
+	"tooltip-format": "{title}"
+	"on-click": "activate",
+	
+	},
+
+}

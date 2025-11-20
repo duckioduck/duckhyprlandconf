@@ -1,0 +1,78 @@
+{
+"name": "float",
+"height": 15,
+"layer": "top",
+"mode": "float",
+
+"margin-top": 20,
+"margin-left": 20,
+"margin-right": 20,
+"margin-bottom": 5,
+
+"position": "top",
+
+"fixed-center": true,
+
+"modules-left": ["custom/appmenu", "wlr/taskbar"],
+"modules-center": ["hyprland/workspaces", "clock"],
+"modules-right": ["custom/wl-gammarelay-temperature", "user"],
+
+"custom/appmenu": {
+        	"format": "   Applications {icon}",
+        	"format-icon": "󰻀",
+        	"rotate": 0,
+        	"exec": "echo 'test'",
+        	"on-click": "~/.config/waybar/runwofi.sh"
+    	},
+
+"wlr/taskbar": {
+	"format": "{icon}",
+	"icon-size": 20,
+	"tooltip-format": "{name}: {title} ({short_state})",
+	"on-click": "activate",
+	"on-click-middle": "close",
+	"rewrite": {
+		"Firefox Web Browser": "Firefox"
+		}
+	},
+
+"hyprland/workspaces": {
+	"ignore-workspaces": ["10"]
+	},
+
+"clock": {
+	"timezone": "IST",
+	"format": "{:%R %A   %d/%m/%y}",
+	"tooltip-format": "<tt><small>{calendar}</small></tt>",
+	"calendar": {
+		"mode": "year",
+		"mode-mon-col": 3,
+		"weeks-pos": "right",
+		"on-scroll": 1,
+		"format": {
+			"months": "<span color='#ffead3'><b>{}</b></span>",
+			"days": "<span color='#ecc6d9'><b>{}</b></span>",
+			"weeks": "<span color='#99ffdd'><b>{}</b></span>",
+			"weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+			"today": "<span color='#ff6699'><b>{}</b></span>"
+			}
+		},
+	
+	"actions": {
+		"on-click-right": "mode",
+		"on-scroll-up": "tz_up",
+		"on-scroll-down": "tz_down",
+		"on-scroll-up": "shift_up",
+		"on-scroll-down": "shift_down"
+		}
+	}
+
+},
+
+"custom/wl-gammarelay-tempareture": {
+	"format": "test",
+	"exec": "wl-gammarelay --subscribe Temperature",
+	"on-scroll-up": "busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateTemperature n +100",
+	"on-scroll-down": "bustctl --user -- call rs.wl.gammarelay / rs.wl.gammarelay UpdateTemperature n -100"
+}
+
